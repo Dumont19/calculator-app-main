@@ -101,6 +101,8 @@ const calculator = () => {
     keys.forEach(key => {
         key.addEventListener('click', (e) => {
 
+          console.log(e.target.value)
+
             if (screen.value === '') {
                 keys[7].value = ''
                 keys[11].value = ''
