@@ -105,14 +105,12 @@ const calculator = () => {
                 keys[7].value = ''
                 keys[11].value = ''
                 keys[12].value = ''
-                keys[13].value = ''
                 keys[14].value = ''
                 keys[15].value = '' 
             } else {
                 keys[7].value = '+'
                 keys[11].value = '-'
                 keys[12].value = '.'
-                keys[13].value = '0'
                 keys[14].value = '/'
                 keys[15].value = '*' 
             }
