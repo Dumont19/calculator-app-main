@@ -105,6 +105,8 @@ const calculator = () => {
       keys[12].value = '.'
       keys[14].value = '/'
       keys[15].value = '*'
+      keys[17].value = '('
+      keys[18].value = ')'
     }
   }
 
