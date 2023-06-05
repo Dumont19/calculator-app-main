@@ -109,9 +109,9 @@ const calculator = () => {
   }
 
   const handleExceptions = (result) => {
-    if (result === Infinity || result === -Infinity) {
+    if (isFinite(result) === false) {
       screen.value = 'Indefinido'
-    } else if (Number.isNaN(result) === true) {
+    } else if (isNaN(result) === true) {
       screen.value = 'Indeterminado'
     } else {
       screen.value = result
@@ -127,7 +127,7 @@ const calculator = () => {
         } else if (e.target.value === 'reset') {
           screen.value = ''
         } else if (e.target.value === 'equal') {
-          const result = new Function(`return Number(${screen.value}).toFixed(10).toString().replace('.', ',').replace(/,?0+$/,'')`)()
+          const result = new Function(`return Number(${screen.value}).toFixed(10).toString().replace(/,?0+$/,'')`)()
           handleExceptions(result)
         } else {
           screen.value += e.target.value
