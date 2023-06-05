@@ -338,7 +338,7 @@ main {
         max-width: 21rem;
     }
 
-    input[type="text"] {
+    .screen-result {
         padding: 1.6rem 1.7rem;
         font-size: 2.5rem;
     }
