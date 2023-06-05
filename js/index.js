@@ -8,9 +8,6 @@ const calculator = () => {
   const screen = document.querySelector('.screen')
   const keysBg = document.querySelector('.keys')
   const keys = Array.from(document.querySelectorAll('.key'))
-  const del = document.querySelector('#delete')
-  const reset = document.querySelector('#reset')
-  const equal = document.querySelector('#equal')
 
   const selectTheme = () => {
     selectors.forEach((selector) => {
