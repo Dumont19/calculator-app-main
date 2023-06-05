@@ -128,7 +128,9 @@ const calculator = () => {
           screen.value = ''
         } else if (e.target.value === 'equal') {
           const expression = screen.value
-          const calcFn = new Function(` return Number(${expression}).toFixed(10).toString().replace(/,?0+$/,'').slice(-1) === '.' ? Number(${expression}).toFixed(10).toString().replace(/,?0+$/,'').slice(0, -1) : Number(${expression}).toFixed(10).toString().replace(/,?0+$/,'')`)
+          const calcFn = new Function(
+            ` return Number(${expression}).toFixed(10).toString().replace(/,?0+$/,'').slice(-1) === '.' ? Number(${expression}).toFixed(10).toString().replace(/,?0+$/,'').slice(0, -1) : Number(${expression}).toFixed(10).toString().replace(/,?0+$/,'')`
+          )
           const result = calcFn()
           handleExceptions(result)
         } else {
@@ -140,5 +142,3 @@ const calculator = () => {
   calculate()
 }
 calculator()
-
-
