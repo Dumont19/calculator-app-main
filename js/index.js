@@ -127,7 +127,7 @@ const calculator = () => {
         } else if (e.target.value === 'reset') {
           screen.value = ''
         } else if (e.target.value === 'equal') {
-          const result = new Function(`return Number(${screen.value}).toFixed(3).toString().replace('.', ',').replace(/,?0+$/,'')`)()
+          const result = new Function(`return Number(${screen.value}).toFixed(10).toString().replace('.', ',').replace(/,?0+$/,'')`)()
           handleExceptions(result)
         } else {
           screen.value += e.target.value
