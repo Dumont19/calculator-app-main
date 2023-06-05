@@ -5,7 +5,7 @@ const calculator = () => {
   const numbers = Array.from(document.querySelectorAll('small'))
   const selectorBg = document.querySelector('.selector-bg')
   const selectors = Array.from(document.querySelectorAll('.selector-circle'))
-  const screen = document.querySelector('input[type="text"]')
+  const screen = document.querySelector('.screen')
   const keysBg = document.querySelector('.keys')
   const keys = Array.from(document.querySelectorAll('.key'))
   const del = document.querySelector('#delete')
@@ -113,9 +113,9 @@ const calculator = () => {
 
   const handleExceptions = (result) => {
     if (result === Infinity || result === -Infinity) {
-      screen.value = 'Resultado indefinido'
-    } else if (Number.isNaN() === false) {
-      screen.value = 'Resultado indeterminado'
+      screen.value = 'Indefinido'
+    } else if (Number.isNaN(result) === true) {
+      screen.value = 'Indeterminado'
     } else {
       screen.value = result
     }
