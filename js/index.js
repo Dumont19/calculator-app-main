@@ -19,7 +19,7 @@ const calculator = () => {
           selectors[1].style.opacity = '0'
           selectors[2].style.opacity = '0'
           selectors[0].style.opacity = '1'
-          body.style.background = 'var(--very-dark-desaturated-blue-body)'  
+          body.style.background = 'var(--very-dark-desaturated-blue-body)'
           title.classList.remove('theme-two')
           themeParag.classList.remove('theme-two')
           selectors.forEach((selector) =>
@@ -97,37 +97,45 @@ const calculator = () => {
   }
   selectTheme()
 
+  const checkInitialScreen = () => {
+    if (screen.value === '') {
+      keys[7].value = ''
+      keys[12].value = ''
+      keys[14].value = ''
+      keys[15].value = ''
+    } else {
+      keys[7].value = '+'
+      keys[12].value = '.'
+      keys[14].value = '/'
+      keys[15].value = '*'
+    }
+  }
+
+  const handleExceptions = (result) => {
+    if (result === Infinity || result === -Infinity) {
+      screen.value = 'Resultado indefinido'
+    } else if (Number.isNaN() === false) {
+      screen.value = 'Resultado indeterminado'
+    } else {
+      screen.value = result
+    }
+  }
+
   const calculate = () => {
-    keys.forEach(key => {
-        key.addEventListener('click', (e) => {
-
-          console.log(e.target.value)
-
-            if (screen.value === '') {
-                keys[7].value = ''
-                keys[11].value = ''
-                keys[12].value = ''
-                keys[14].value = ''
-                keys[15].value = '' 
-            } else {
-                keys[7].value = '+'
-                keys[11].value = '-'
-                keys[12].value = '.'
-                keys[14].value = '/'
-                keys[15].value = '*' 
-            }
-    
-            if (e.target.value === 'delete') {
-                screen.value = screen.value.slice(0, -1)
-            } else if (e.target.value === 'reset') {
-                screen.value = ''
-            } else if (e.target.value === 'equal') {
-                const result = (new Function(`return ${screen.value}`))()
-                screen.value = result
-            } else {
-                screen.value += e.target.value
-            }
-        })
+    keys.forEach((key) => {
+      key.addEventListener('click', (e) => {
+        checkInitialScreen()
+        if (e.target.value === 'delete') {
+          screen.value = screen.value.slice(0, -1)
+        } else if (e.target.value === 'reset') {
+          screen.value = ''
+        } else if (e.target.value === 'equal') {
+          const result = new Function(`return ${screen.value}`)()
+          handleExceptions(result)
+        } else {
+          screen.value += e.target.value
+        }
+      })
     })
   }
   calculate()
