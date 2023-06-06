@@ -192,6 +192,10 @@ main {
     background: var(--pure-cyan);
 }
 
+.result-screen label{
+    display: none;
+}
+
 .screen {
     width: 100%;
     background: var(--very-dark-desaturated-blue-screen);
