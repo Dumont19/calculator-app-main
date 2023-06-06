@@ -93,7 +93,7 @@ const calculator = () => {
     })
   }
   selectTheme()
-
+  
   const checkInitialScreen = () => {
     if (screen.value === '') {
       keys[7].value = ''
