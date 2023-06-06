@@ -100,6 +100,7 @@ const calculator = () => {
       keys[12].value = ''
       keys[14].value = ''
       keys[15].value = ''
+      keys[18].value = ''
     } else {
       keys[7].value = '+'
       keys[12].value = '.'
