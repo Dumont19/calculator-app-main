@@ -26,9 +26,9 @@ Users should be able to:
 
 ### Screenshots
 
-![](images/calc-theme-one.png)
-![](images/calc-theme-two.png)
-![](images/calc-theme-three.png)
+![](images/theme-one.png)
+![](images/theme-two.png)
+![](images/theme-three.png)
 
 ### Links
 
